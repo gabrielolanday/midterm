@@ -119,3 +119,10 @@ right:0;
   justify-content: space-between;
   justify-items: center;
 }
+
+#na{
+  position: relative;
+  top: 50vh;
+  display: flex;
+  justify-content: center;
+}
