@@ -120,9 +120,8 @@ right:0;
   justify-items: center;
 }
 
-.githubpagesisstupid{
+#glitch{
   position: relative;
-  top: 50vh;
-  display: flex;
-  justify-content: center;
+  width: 10vmin;
+  height: 1vmax;
 }
