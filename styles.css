@@ -151,8 +151,6 @@ body{
   max-height: 90%;
 }
 
-
-
 .stream {
   grid-area: stream;
   display: flex;
