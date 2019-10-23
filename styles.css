@@ -1,5 +1,7 @@
 body{
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
 }
 
 @font-face {
@@ -7,121 +9,173 @@ body{
   src: url("font/PressStart2P.ttf");
 }
 
-.bg {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-}
-.bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
+.logo{
+  background-image: url("img/newlogo2.png");
+  background-position: center;
 }
 
-#titlebutt{
-  position: absolute;
-  top: 65vh;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.arcade{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  margin:auto;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-}
-
-.arcade img {
-max-width: 100%;
-max-height: 100%;
-position: absolute;
-margin:auto;
-top:0;
-bottom:0;
-left:0;
-right:0;
-}
-
-.nav{
-  position: relative;
-  margin: auto;
-  top: 90vh;
-  width: 30vw;
+.returntotitle {
+  grid-area: return;
   display: flex;
-  justify-content: space-around;
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  justify-content: center;
+  align-items: center;
 }
 
-.stream{
-  position: relative;
-  top: 28.2vh;
+.returntotitle input{
+  width: 150px;
+  height: 150px;
+}
+
+.returntotitle input:hover{
+  cursor: pointer;
+}
+
+.arcbg{
+  background-image: url("img/arcade-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.console{
+  background-image: url("img/arcade.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  height: 120%;
+}
+
+#continue{
+  grid-area: myArea;
   display: flex;
   justify-content: center;
 }
 
-#grid{
-  width: 100%;
+.grid-container {
   height: 100%;
-  position: absolute;
-  margin:auto;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-}
-
-#grid img {
-max-width: 100%;
-max-height: 100%;
-position: absolute;
-margin:auto;
-top:18vh;
-bottom:0;
-left:0;
-right:0;
-}
-
-.shopcontainer{
-  position: relative;
-  margin: auto;
-  top: 30vh;
-  width: 991px;
-  height: 458px;
   display: grid;
-  grid-template-rows: 10% 67% 10%;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 3.5fr 1fr;
+  grid-template-areas: ". . ." ". myArea .";
 }
 
-.shopcontainer2{
-  width: 750px;
-  display: flex;
-  justify-content: space-between;
+.home-grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.96fr 2.08fr 0.96fr;
+  grid-template-rows: 0.85fr 0.88fr 0.27fr;
+  grid-template-areas: ". return ." ". stream ." ". nav .";
 }
 
-.shopcontainer3{
-  font-family: "8bit";
+.about-grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.96fr 2.08fr 0.96fr;
+  grid-template-rows: 0.85fr 0.88fr 0.27fr;
+  grid-template-areas: ". return ." ". unavailable ." ". nav .";
+}
+
+.shop-grid-container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.96fr 2.08fr 0.96fr;
+    grid-template-rows: 0.85fr 0.88fr 0.27fr;
+    grid-template-areas: ". return ." ". main ." ". nav .";
+}
+
+.main{
+  background-image: url('img/grid.png');
+  grid-area: main;
+  display: inline-grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1.5fr 0.5fr;
+  grid-template-areas: ". . shoptxt . ." ". shirt hoodie phone ." ". price price price .";
+}
+
+.price{
+  grid-area: price;
   color: white;
-  width: 850px;
+  font-family: '8bit';
+
   display: flex;
-  justify-content: space-between;
-  justify-items: center;
+  justify-content: space-around;
 }
 
-#glitch{
-  position: relative;
-  width: 10vmin;
-  height: 1vmax;
+.shoptxt{
+  grid-area: shoptxt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoptxt img{
+  height: 50%;
+}
+
+.shirt{
+  grid-area: shirt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shirt img{
+  max-width: 75%;
+}
+
+.hoodie{
+  grid-area: hoodie;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hoodie img{
+  max-width: 75%;
+}
+
+.phone{
+  grid-area: phone;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone img{
+  max-height: 90%;
+}
+
+
+
+.stream {
+  grid-area: stream;
+  display: flex;
+}
+
+.stream #vod{
+  height: 100%;
+  width: 75%;
+}
+
+.stream #chat{
+  width: 25%;
+  height: auto;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.unavailable {
+  grid-area: unavailable;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
